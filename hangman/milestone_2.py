@@ -22,7 +22,7 @@ else:
         print("Too Bad!!", guess, "is not correct. Try again")
            
 
-#Task three, convert the guessed letter to lowercase and put code in fuction
+#Task three, convert the guessed letter to lowercase and define a fuction
 def check_guess(guess):
     guess_lower = guess.lower()
     if guess_lower in word:
