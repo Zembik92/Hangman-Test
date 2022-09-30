@@ -5,7 +5,7 @@ word_list = ["apple", "banana", "pineapple", "mango", "grapes"]
 #Using the random module, randomly print one of your favorite fruit
 word = random.choice(word_list) 
 print(word)
-
+'''
 # Task one, ask the user to input one letter
 while True:
     guess = input("Enter a single letter: ")
@@ -20,17 +20,17 @@ if guess in word:
 else:
     if guess not in word:
         print("Too Bad!!", guess, "is not correct. Try again")
-           
-
-#Task three, convert the guessed letter to lowercase and define a fuction
+'''
+#Task three, put it all together in a function and call the functions
+#check if letter is in chosen word
 def check_guess(guess):
-    guess_lower = guess.lower()
-    if guess_lower in word:
-        print("Good job!!", guess_lower, "is correct")
+    guess= guess.lower()
+    if guess in word:
+        print("Good job!!", guess, "is correct")
     else:
-        if guess_lower not in word:
-            print("Too Bad!!", guess_lower, "is not correct. Try again")  
-                
+        if guess not in word:
+            print("Too Bad!!", guess, "is not correct. Try again")  
+#ask user to input a letter, check if its a single aphabet                
 def ask_for_input():
     while True:
         guess = input("Enter a single letter: ")
@@ -41,6 +41,8 @@ def ask_for_input():
     check_guess(guess)
 
 ask_for_input()
+
+
       
 
     
