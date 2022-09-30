@@ -5,4 +5,4 @@ a wrong single alpha charachter is guessed, the lives is reduced and a limp of a
 
 
 # Technologies
-I used Python 3.10 and imported the random module. The game can be implemented by running the hangman_Template.py in your terminal.
+I used Python 3.10 and imported the random module. The game can be implemented by running the hangman.hangman_solution.py in your terminal.
