@@ -49,7 +49,7 @@ class Hangman:
         self.num_lives = num_lives
         self.list_of_guesses = []
         self.word_list = word_list
-        self.mis = 0
+        #self.mis = 0
         # TODO 2: Print two messages upon initialization:
         # 1. "The mystery word has {len(self.word)} characters" (The number of letters is NOT the UNIQUE number of letters)
         # 2. {word_guessed}
@@ -83,8 +83,8 @@ class Hangman:
             self.num_letters -= 1         
         else:
             self.num_lives -= 1 
-            self.mis += 1  
-            self.draw_man(self.mis) 
+            #self.mis += 1  
+            self.draw_man(self.num_lives) 
                         
             
         
@@ -101,16 +101,16 @@ class Hangman:
         # TODO 1: The letter has to comply with the following criteria: It has to be a single character. If it is not, print "Please, enter just one character"
         # TODO 2. It has to be a letter that has not been tried yet. Use the list_letters attribute to check this. If it has been tried, print "{letter} was already tried".
         # TODO 3: If the letter is valid, call the check_letter method
-        while True:
-            guess = input("Enter a single letter: ")
-            if len(guess) !=1 or not guess.isalpha():
-                print("Invalid letter. Please enter a single letter")
-            elif guess in self.list_of_guesses:
-                print("You already tried that letter!")
-            else:
-                self.check_guess(guess)
-                self.list_of_guesses.append(guess)
-                break
+        
+        guess = input("Enter a single letter: ")
+        if len(guess) !=1 or not guess.isalpha():
+            print("Invalid letter. Please enter a single letter")
+        elif guess in self.list_of_guesses:
+            print("You already tried that letter!")
+        else:
+            self.check_guess(guess)
+            self.list_of_guesses.append(guess)
+        
     
     def draw_man(self, lives):
         
@@ -132,7 +132,7 @@ class Hangman:
                 print("Yikes.")
             elif i == 4 and lives == 5:
                 print("/ \\")
-        return    
+                   
 	
 
 def play_game(word_list):
@@ -146,7 +146,7 @@ def play_game(word_list):
     # If the user guesses the word, print "Congratulations, you won!"
     # If the user runs out of lives, print "You ran out of lives. The word was {word}"
     while True:
-        #print(game.num_lives)
+        
         if game.num_lives == 0:
             print("You lost!!. The word was", game.word )
             break
@@ -154,6 +154,7 @@ def play_game(word_list):
             game.ask_for_input()
         else:
             print("Congratulations, you have won!!")
+            print(game.word_guessed)
             break
 
 if __name__ == '__main__':
