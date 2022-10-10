@@ -83,7 +83,7 @@ class Hangman:
             self.num_letters -= 1         
         else:
             self.num_lives -= 1 
-            #self.mis += 1  
+            self.mis += 1  
             self.draw_man(self.num_lives) 
                         
             
