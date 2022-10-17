@@ -49,7 +49,7 @@ class Hangman:
         self.num_lives = num_lives
         self.list_of_guesses = []
         self.word_list = word_list
-        #self.mis = 0
+        self.mis = 0
         # TODO 2: Print two messages upon initialization:
         # 1. "The mystery word has {len(self.word)} characters" (The number of letters is NOT the UNIQUE number of letters)
         # 2. {word_guessed}
